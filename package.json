@@ -5,7 +5,8 @@
   "description": "3CX Web Client wrapper for Linux",
   "main": "main.js",
   "scripts": {
-    "start": "electron ./main.js"
+    "start": "electron ./main.js",
+    "dist": "electron-builder --linux snap"
   },
   "repository": "",
   "keywords": [
