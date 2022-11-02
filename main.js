@@ -29,7 +29,8 @@ mainWindow = new BrowserWindow({
   height: windowHeight, 
   frame: showFrame,
   resizable: true,
-  autoHideMenuBar: true});
+  autoHideMenuBar: true,
+  icon: path.join(__dirname, 'icon.png')});
 
 mainWindow.loadURL(loadurl);
 
