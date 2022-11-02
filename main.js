@@ -6,12 +6,30 @@ const path = require('path');
 const url = require('url');
 
 const loadurl = app.commandLine.getSwitchValue('url');
+var windowWidth = 450;
+var windowHeight = 600;
+var showFrame = true;
+
+if (app.commandLine.hasSwitch('width')) {
+  windowWidth = app.commandLine.getSwitchValue('width');
+}
+if (app.commandLine.hasSwitch('height')) {
+  windowHeight = app.commandLine.getSwitchValue('height');
+}
+if (app.commandLine.hasSwitch('hideframe')) {
+  showFrame = false;
+}
 
 let mainWindow;
 
 function createWindow() {
 
-mainWindow = new BrowserWindow({width: 800, height: 600});
+mainWindow = new BrowserWindow({
+  width: windowWidth, 
+  height: windowHeight, 
+  frame: showFrame,
+  resizable: true,
+  autoHideMenuBar: true});
 
 mainWindow.loadURL(loadurl);
 
